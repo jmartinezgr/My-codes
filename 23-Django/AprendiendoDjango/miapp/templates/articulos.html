@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+    Listado de articulos
+{% endblock %}
+
+{% block content%}
+
+<h1 class="title">Listado de articulos</h1>
+
+{% if messages %}
+    {% for m in messages %}
+        <div class="mensaje">
+            {{m}}
+        </div>
+    {%endfor%}
+{% endif %} 
+
+<div id="xd">   
+ 
+        {%for articulo in articulos %}
+            
+            <article class="article-item">   
+                {% if articulo.image != 'null'%}
+                    <div class="putafoto">    
+                        <img src="{{articulo.image.url}}"/>
+                    </div>    
+                {%endif%}
+                <div class="data">
+                    <h2> {{articulo.title}}</h2>
+                    <p class="date">{{articulo.created_at}} 
+                                
+                    <p class="lista-años"> 
+                        {{articulo.content}} 
+                    </p>
+                    <p>    
+                        <a href={% url 'borrar' id=articulo.id %} class="btn btn-delete">   
+                            eliminar
+                        </a>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </article>
+        {%endfor%}
+</div>
+{% endblock %}

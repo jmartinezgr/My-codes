@@ -1,0 +1,13 @@
+<hr/>
+<p id="lol"> {{saludo}} {{nombre}}</p>
+<h1>estamos a 2022</h1>
+<p id="lol"><strong>Años pares</strong></p>
+<div class="lista-años">
+    <ul>
+        {% for n in par %}
+            {% if n|divisibleby:2 %}
+                <li>{{n}}</li>
+            {% endif %}
+        {% endfor   %}
+    </ul>
+</div>

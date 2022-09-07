@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title%}
+    Pagina de Pruebas
+{% endblock %}
+
+{% block content%}
+
+<h1 class="title">Pagina de mi web</h1>
+
+<p>
+    Creado por Juan Jose Martinez
+<p>
+
+<p>
+    {{"Creado por Su puta madre ñññññññ"|cut:"ñ"}}
+</p>
+
+<p>
+    {{texto|default:"no hay nada"}}
+</p>
+
+<p>
+    {{listax|first}}
+</p>
+
+<p>
+    {{listax|last}}
+</p>
+
+<p>
+    {{listax|join:', '}}
+</p>
+
+<p>
+    {{listax|length}}
+</p>
+
+<p>
+    {{"marihuana"|upper}}
+</p>
+
+<p>
+    {{listax|random}}   
+</p>
+
+<p>
+    {{"<h1>texto</h1> <strong>Pruebas</strong>"|striptags|wordcount}}
+</p>
+{% load filters %}
+<p>
+    {{"Victor robles"|saludo|safe}}
+</p>
+{% endblock %}
