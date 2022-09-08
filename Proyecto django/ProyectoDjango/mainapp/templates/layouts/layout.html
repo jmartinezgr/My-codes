@@ -1,0 +1,67 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title> 
+        {% block title %}
+        
+        {% endblock %}
+        | Juan Jose Martinez
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    
+</head>
+
+<body>
+    
+    <!--Cabecera de la pagina-->
+
+    <header>
+        <div id="logotipo">
+           <!--Logo Django-->
+           <img src="{% static 'images/logo.png' %}" alt="">
+           <h1>Sitio Web con Django</h1>
+        </div>
+        <h1></h1>
+    </header>
+   
+    <nav>
+        <ul>
+            <li>
+                <a href={% url 'index' %}>
+                    Inicio
+                </a>
+            </li>
+            <li>
+                <a href={% url 'about'%}>
+                    Sobre nosotros
+                </a>
+            </li>
+        </ul> 
+    </nav>
+    <div class="barra">
+        <span class="eskina-izkierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="eskina-derecha"></span>
+    </div>
+    <div id="con">
+        <div class="box">
+            {% block content%}
+            <strong>Contenido Original!!</strong>
+            {% endblock %}
+        </div>
+    </div>
+    
+    <footer>
+        Master en python &copy; Juan Jose Martinez - {%now "Y"%}
+    </footer>
+</body>
+
+</html>
